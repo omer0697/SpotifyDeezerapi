@@ -6,6 +6,7 @@ function SongItem({item }) {
 
     const dispatch = useDispatch()
     const {current,playing,controls } = useSelector(state => state.player )
+    console.log(current)
     const updateCurrent = () =>{
         if (current.id === item.id){
             if (playing) {

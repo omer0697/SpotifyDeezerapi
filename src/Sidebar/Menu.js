@@ -21,14 +21,8 @@ function Menu(){
                     Ara
                    </NavLink>
                 </li>
-                <li>
-                   <NavLink  to={"/collection"} className={({ isActive }) => (isActive ? 'h-10 gap-x-4 flex items-center text-sm font-semibold text-link rounded hover:text-white px-4 bg-active text-white' : 'h-10 gap-x-4 flex items-center text-sm font-semibold text-link rounded hover:text-white px-4')}>
-                   <span>
-                        <Icon name="collection"></Icon>
-                    </span>
-                    Kitaplığın
-                   </NavLink>
-                </li>
+                
+                
                 
             </ul>
         </nav>

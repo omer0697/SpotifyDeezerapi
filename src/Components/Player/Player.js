@@ -48,13 +48,38 @@ function Player(){
         return "volumeFull"    
       },[state.volume,state.muted]) 
 
+      function LikedAdd(){
+        let music;
+        if (localStorage.getItem("music")===null){
+            music=[];
+        }
+        else {
+            music = JSON.parse(localStorage.getItem("music"));
+        }
+        music.push(current);
+        localStorage.setItem("music",JSON.stringify(music));
+      }
+
 
     
 
     return (
         <div className="flex px-4 justify-between items-center h-full">
             <div className="min-w-[11.25rem] w-[30%] ">
-                sol
+                <div className="flex items-center ">
+                    <div className="">
+
+                        <div className="w-[3.5rem]"><img src={current ? current.album.cover : "" } alt={current ? current.id : ""}></img></div>
+                        <h6 className="text-semibold">{current ? current.album.title  : ""}</h6>
+
+                    </div >
+                    <button onClick={LikedAdd} className="w-8 h-8 flex items-center justify-center text-white text-opacity-70 hover:text-opacity-100 ">
+                        <Icon  size={16}  name="heart"></Icon>
+                    </button>
+                    <button className="w-8 h-8 flex items-center justify-center text-white text-opacity-70 hover:text-opacity-100 ">
+                        <Icon size={16} name="pictureInPicture"></Icon>
+                    </button>
+                </div>    
             </div>
             <div className="max-w-[45.125rem] w-[40%] flex flex-col items-center">
                 <div className="flex items-center gap-x-2">
@@ -103,9 +128,7 @@ function Player(){
                     <button className="w-8 h-8 flex items-center justify-center text-white text-opacity-70 hover:text-opacity-100 ">
                         <Icon size={16} name="device"></Icon>
                     </button>
-                    <button className="w-8 h-8 flex items-center justify-center text-white text-opacity-70 hover:text-opacity-100 ">
-                        <Icon size={16} name="device"></Icon>
-                    </button><button 
+                   <button 
                         onClick={controls[state.muted ?  "unmute": "mute" ]}
                         className="w-8 h-8 flex items-center justify-center text-white text-opacity-70 hover:text-opacity-100 ">
                         
