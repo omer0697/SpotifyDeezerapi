@@ -74,10 +74,10 @@ function Player(){
 
                     </div >
                     <button onClick={LikedAdd} className="w-8 h-8 flex items-center justify-center text-white text-opacity-70 hover:text-opacity-100 ">
-                        <Icon  size={16}  name="heart"></Icon>
+                        <Icon  size={current? 16: 0}  name="heart"></Icon>
                     </button>
                     <button className="w-8 h-8 flex items-center justify-center text-white text-opacity-70 hover:text-opacity-100 ">
-                        <Icon size={16} name="pictureInPicture"></Icon>
+                        <Icon size={current? 16: 0} name="pictureInPicture"></Icon>
                     </button>
                 </div>    
             </div>
